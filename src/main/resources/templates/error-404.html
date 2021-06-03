@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="../css/main.css" />
+   
+    <style type="text/css">
+        li > a:hover{ background-color: #ffc100}
+
+        .center {display: block;  margin-left: auto; margin-right: auto; width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+
+<header>
+    <nav class="navbar-fluid navbar-light bg-light ">
+        <div class="container " >
+
+            <div class="row">
+                <div class="col-sm-2">
+                 
+                </div>
+
+                <div class="col-sm-8">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+                        <button class="navbar-toggler center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active px-2">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+                                <li class="nav-item active px-2">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item active px-2">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+                                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                            <div class="col-sm-1">
+
+                	        </div>
+                            <form class="form-inline my-2 my-lg-0" method="get" action="/logout">
+                                
+                                <button class="btn btn-danger " type="submit">Logout</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-2">
+
+                </div>
+            </div>
+
+
+            <!--
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          -->
+        </div>
+    </nav>
+
+</header>
+
+<div class="jumbotron jumbotron-fluid bg-danger text-white mb-0">
+    <div class="container text-center">
+       <h1>Opppss! </h1>
+       <br>
+       <h3>Page not found.</h3>
+       <h4> The page you are looking for might have been removed had its name changed or is temporarily unavailable.</h4>
+		<a href="/">Go Home</a>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Employee</title>
+ 
+    <link href="../static/css/adminpanel.css" th:href="@{/css/adminpanel.css}" rel="stylesheet" />
+    <link  href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+<form action="/adminpanel/updateEmployee" th:action="@{/adminpanel/updateEmployee}" th:object="${employee}"  method="POST">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Employee</h4>
+                    <a href="/adminpanel" class="close" aria-hidden="true">&times;</a>
+                </div>
+                <div class="modal-body">
+                      
+			    <div class="alert alert-success" th:if="${message}" th:text="${message}">
+        			
+    			</div>
+                      
+                      <input type="hidden" th:field="*{id}" class="form-control"/>
+                      <div class="form-group">
+                    
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+                        <label>Username</label>
+                        <input type="text" th:field="*{username}" class="form-control" required minlength="3" maxlength="16" >
+                        
+                         
+                    </div> 
+                    <div class="form-group">
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+                        <label>Name</label>
+                        <input type="text" th:field="*{firstName}" class="form-control" required minlength="3" maxlength="16" >
+                        
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+                        <label>Surname</label>
+                        <input type="text" th:field="*{lastName}" class="form-control" required minlength="3" maxlength="16">
+                        
+                         
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger"th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                        <label>Password</label>
+                        <input type="password" th:field="*{password}" class="form-control" required minlength="3" maxlength="16">
+                       
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        <div  class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                        <label>Email</label>
+                        <input type="text" th:field="*{email}" class="form-control" required minlength="3" maxlength="30">
+                       
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+                        <label>Phone</label>
+                        
+						<input type="text" th:field="*{phone}" class="form-control"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required minlength="11" maxlength="11"/>
+                       
+                    </div>
+                     <div class="form-group">
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}"></div>
+                        <label>Role</label>
+                        <select class="form-control" th:field="*{roles}">					    
+						    <option th:value="'USER'" th:text="USER"></option>
+						    <option th:value="'ADMIN'" th:text="ADMIN"></option>
+						</select>
+						
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"  class="btn btn-info" data-dismiss="modal" ><a href="/adminpanel"  class="text-white">Back to AdminPanel</a></button>
+                    <button type="submit" class="btn btn-success"><a  class="text-white">Update</a></button>
+                </div>
+            </form>
+      </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+    <link href="../static/css/main.css"/>
+    <link href="../static/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/fontawesome.min.css">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+	<title>Login Page</title>
+
+	<style type="text/css">
+		li > a:hover{ background-color: #ffc100}
+
+		.center {display: block;  margin-left: auto; margin-right: auto; width: 50%;
+		}
+	</style>
+
+</head>
+
+<body>
+<header>
+	<nav class="navbar-fluid navbar-light bg-light ">
+		<div class="container " >
+
+			<div class="row">
+				<div class="col-sm-2">
+
+				</div>
+
+				<div class="col-sm-8">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+						<button class="navbar-toggler center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item active px-2">
+									<a class="nav-link" href="/">Home</a>
+								</li>
+								<li class="nav-item active px-2">
+									<a class="nav-link" href="#">About</a>
+								</li>
+								<li class="nav-item active px-2">
+									<a class="nav-link" href="#">Contact</a>
+								</li>
+							</ul>
+
+							<form class="form-inline my-2 my-lg-0">
+								<input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+								<button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+							</form>
+						</div>
+					</nav>
+				</div>
+				<div class="col-sm-2">
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+</header>
+
+
+<div class="jumbotron bg-dark text-white mb-0">
+	<div class="container" >
+
+		<div class="row">
+			<div class="col-sm-3">
+
+			</div>
+
+			<div class="col-sm-6">
+				<!-- Default form login -->
+				<form class="text-center border border-light p-5 bg-dark" action="#!">
+
+					<p class="h4 mb-4">Sign in</p>
+
+					<!-- Email -->
+					<input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+					<!-- Password -->
+					<input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+					<div class="d-flex justify-content-around">
+						<div>
+							<!-- Remember me -->
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+								<label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+							</div>
+						</div>
+						<div>
+							<!-- Forgot password -->
+							<a href="">Forgot password?</a>
+						</div>
+					</div>
+
+					<!-- Sign in button -->
+					<button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+					<!-- Register -->
+					<p>Not a member?
+						<a href="">Register</a>
+					</p>
+
+					<!-- Social login -->
+					<p>or sign in with:</p>
+
+					<a href="#" class="mx-2" role="button"><i class="fa fab fa-facebook light-blue-text"></i></a>
+					<a href="#" class="mx-2" role="button"><i class="fa fab fa-twitter light-blue-text"></i></a>
+					<a href="#" class="mx-2" role="button"><i class="fa fa-linkedin light-blue-text"></i></a>
+					<a href="#" class="mx-2" role="button"><i class="fa fa-github "></i></a>
+
+				</form>
+
+			</div>
+			<div class="col-sm-3">
+
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+
+<footer class="page-footer font-small bg-info  ">
+	<div class="container">
+
+
+		<!-- Footer Text -->
+		<div class="container text-center text-md-left">
+
+			<!-- Grid row -->
+			<div class="row">
+
+				<!-- Grid column -->
+				<div class="col-md-6 mt-3">
+
+					<!-- Content -->
+					<h5 class="text-uppercase font-weight-bold text-center mt-3">Footer text 1</h5>
+					<p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+						repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+						harum esse fugiat. Itaque, culpa?</p>
+
+				</div>
+				<!-- Grid column -->
+
+
+
+				<!-- Grid column -->
+				<div class="col-md-6 mt-3">
+
+					<!-- Content -->
+					<h5 class="text-uppercase font-weight-bold text-center mt-3">Footer text 2</h5>
+					<p class="text-center" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
+						commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
+						excepturi hic.</p>
+
+				</div>
+				<!-- Grid column -->
+
+			</div>
+			<!-- Grid row -->
+
+		</div>
+		<!-- Footer Text -->
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2020 Copyright:
+			<a href="#"> WEB GUI</a>
+		</div>
+		<!-- Copyright -->
+	</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
