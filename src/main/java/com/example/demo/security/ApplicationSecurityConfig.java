@@ -56,8 +56,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 		   .headers()
 		      .frameOptions()
 		         .sameOrigin();
-//	  http .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-	  http.headers().cacheControl();
+
+	   
 	   http.headers()
 	       .xssProtection()
 	       .and()
@@ -68,8 +68,10 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	             .and()
 	             .sessionFixation().none()
 	             .invalidSessionUrl("/login");
+	   //Disable for testing
 	   http
-	   		.csrf().disable()
+	        .csrf().disable();
+	   http
 	        .authorizeRequests()
 	        .antMatchers("/login, /","/css/**","/js/**").permitAll()
 	        .and()
