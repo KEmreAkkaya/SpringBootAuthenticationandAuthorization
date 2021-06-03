@@ -1,10 +1,8 @@
 package com.example.demo.controller;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
@@ -40,31 +38,7 @@ public class EmployeeController implements ErrorController {
 	@RequestMapping("/login")
 	public String viewLoginPage(Model model, HttpServletRequest request ) 
 	{   
-		
-//		if(result.hasErrors()) 
-//		{
-//			
-//			return "login";
-//		}
-//		model.addAttribute("employee",employee);
-//		System.out.println("employeeeee : "+ employee.getUsername());
-//		Cookie cookies = new Cookie("Username", employee.getUsername());
-//		response.addCookie(cookies);
-//		cookies.setMaxAge(5*60);
-//		
-		
-		Cookie[] cookie = request.getCookies();
-		
-		for (Cookie temp: cookie)
-		{
-			
-			if("JSESSIONID".equals(temp.getName()))
-		        System.out.println("Cookie :" + temp.getValue());
-			   
-			
-		}
-		
-		     
+				     
 		return "login";
 	}
 	
