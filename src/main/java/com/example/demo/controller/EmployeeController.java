@@ -36,7 +36,7 @@ public class EmployeeController implements ErrorController {
 	}
 
 	@RequestMapping("/login")
-	public String viewLoginPage(Model model, HttpServletRequest request ) 
+	public String viewLoginPage(Model model ) 
 	{   
 				     
 		return "login";
