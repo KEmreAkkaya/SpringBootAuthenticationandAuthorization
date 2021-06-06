@@ -17,7 +17,6 @@ import org.springframework.security.web.csrf.CsrfFilter;
 //import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //Implement for testing username ,password ,roles 
 
@@ -27,7 +26,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @EnableWebSecurity
-public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer
+public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter 
 {  
 	
 	@Resource
