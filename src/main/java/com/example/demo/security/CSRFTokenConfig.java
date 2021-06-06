@@ -37,8 +37,10 @@ public class CSRFTokenConfig implements CsrfTokenRepository {
 	public void saveToken(CsrfToken token, HttpServletRequest request, HttpServletResponse response) {
 		  String tokenValue = token == null ? "" : token.getToken();
 	        Cookie cookie = new Cookie(this.DEFAULT_CSRF_COOKIE_NAME, tokenValue);
-	        cookie.setSecure(request.isSecure());
+	        cookie.setSecure(true);
+	        cookie.setHttpOnly(true);
 	        cookie.setMaxAge(300);
+	        
 	        response.addCookie(cookie);
 
 	}
