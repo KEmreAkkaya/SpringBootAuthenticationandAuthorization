@@ -25,6 +25,9 @@
           <label for="password" class="sr-only">Password</label>
           <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         </p>
+         <input type="hidden"
+    th:name="${_csrf.parameterName}"
+    th:value="${_csrf.token}"/>
         <p>
           Remember me
 
