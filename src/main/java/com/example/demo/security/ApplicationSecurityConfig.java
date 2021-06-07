@@ -1,10 +1,10 @@
 package com.example.demo.security;
 
+import java.util.Arrays;
 import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.security.web.firewall.StrictHttpFirewall;
 //import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -61,11 +62,11 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	protected void configure(HttpSecurity http) throws Exception 
 	{  		   
 	 
+		
 		http
 		   .headers()
 		      .frameOptions()
 		         .sameOrigin();
-
 	   
 	   http.headers()
 	       .xssProtection()
@@ -77,9 +78,10 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	             .and()
 	             .sessionFixation().none()
 	             .invalidSessionUrl("/login");
+	   
 	   //Disable for testing
 //	   http.csrf().disable();
-	   
+	    
 	   
 	   http
 	        .csrf().csrfTokenRepository(new CSRFTokenConfig());
@@ -115,11 +117,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	                   .invalidateHttpSession(true)
 	                   .deleteCookies("JSESSIONID","remember-me","XSRF-TOKEN")
 	                   .logoutSuccessUrl("/login");
-          
-	
-	   
-	  
-	                   
+     	                   
 	
 	}
 	
@@ -148,9 +146,15 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 	}
 	
 	
+   
+	@Bean
+	public StrictHttpFirewall httpFirewall() {
 
+	    StrictHttpFirewall firewall = new StrictHttpFirewall();
+	    firewall.setAllowedHttpMethods(Arrays.asList("GET", "POST"));
+	    return firewall;
+	}
 	
-	
-	 
+
 
 }

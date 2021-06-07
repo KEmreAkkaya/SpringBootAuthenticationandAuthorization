@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
@@ -30,28 +30,28 @@ public class EmployeeController implements ErrorController {
 	@Autowired
     private EmployeeService employeeService;
     
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String viewHomePage(Model model ) 
 	{
 		
 		return "index";
 	}
 
-	@RequestMapping("/login")
+	@RequestMapping(method= RequestMethod.GET,path="/login")
 	public String viewLoginPage(Model model ) 
 	{   
 				     
 		return "login";
 	}
 	
-	@RequestMapping("/log-in")
+	@GetMapping("/log-in")
 	public String viewLoginPxage(Model model ) 
 	{
 		
 		return "log-in";
 	}
 
-	@RequestMapping("/sign-up")
+	@GetMapping("/sign-up")
 	public String viewSignUpPage(Model model ) 
 	{
 		
@@ -59,7 +59,7 @@ public class EmployeeController implements ErrorController {
 	}
   
 	
-	@RequestMapping("/adminpanel")
+	@GetMapping("/adminpanel")
 	public String viewAdminPage(Model model ) 
 	{   
 		if(  WarningScreenControl==1) 
@@ -69,8 +69,6 @@ public class EmployeeController implements ErrorController {
 		if( WarningScreenControl==2) {
 		    model.addAttribute("errorMessage","Username already exists.");
 		}
-		
-		
 		
 		Employee employee=new Employee();
 		model.addAttribute("listEmployees",employeeService.getAllEmployees());
@@ -138,7 +136,7 @@ public class EmployeeController implements ErrorController {
 	
 	
 
-	@RequestMapping("/adminpanel/updateEmployee/{id}")
+	@PostMapping("/adminpanel/updateEmployee/{id}")
 	public String updateEmployee(@PathVariable (value="id") long id, Model model) 
 	{
 		Employee employee = employeeService.getEmployeeById(id);
@@ -159,10 +157,10 @@ public class EmployeeController implements ErrorController {
 	}
 	
 	
-	@RequestMapping("/error")
+	@GetMapping("/error")
 	public String handleError(HttpServletRequest request) {
 	    Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-	   
+	     
 	    if (status != null) {
 	        Integer statusCode = Integer.valueOf(status.toString());
 	    
@@ -175,6 +173,7 @@ public class EmployeeController implements ErrorController {
 	        else if(statusCode == HttpStatus.FORBIDDEN.value()) {
 	            return "error-403";
 	        }
+	        
 	    }
 	    return "error";
 	}
